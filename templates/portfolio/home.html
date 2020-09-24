@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+<head>
+    <link rel="icon" type="image/png" href="{% static 'love.jpg' %}">
+
+</head>
+<h1>
+<img src="{% static 'one.jpg' %}" alt="mahmud"style="max-width: 50px; max-height: 50px;">
+Mahmud Portfolio</h1>
+
+{% for project in sos %}
+
+<p>
+    <h3>{{project.Title}}</h3>
+    <p> {{project.description}}</p>
+    <img src="{{ project.image.url }}"alt="mahmud"style="max-width: 100px; max-height: 500px;">
+    {% if project.url %}
+    <br><a href="{{ project.url }}">Link</a>
+    <br>
+<a href="{% static 'lol.pdf' %}" alt="mahmud"> PDF</a>
+
+    {% endif %}
+</p>
+
+
+{% endfor %}
+
+{% endblock %}
+

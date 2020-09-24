@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<p>
+    <h1>{{sos.Title}}</h1>
+    {{sos.date}}
+    <br>
+    {{sos.description}}
+    
+
+
+</p>
+
+<img src="{% static 'one.jpg' %}" alt="mahmud"style="max-width: 50px; max-height: 50px;">
+<br>
+<a href="{% static 'lol.pdf' %}" alt="mahmud"> PDF</a>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Mahmud Blog</h1>
+<h2>Mahmud write {{sos.count }} blog{{sos.count|pluralize }}</h2>
+{% for Blog in sos %}
+<p>
+    <a href="{% url 'blog:detail' Blog.id %}"><h4> {{Blog.Title}}</h4></a>
+    {{Blog.date|date:'F jS Y'|lower}}
+    <br>
+    {{Blog.description|truncatechars:150}}
+</p>
+{% endfor %}
+{% endblock %}
